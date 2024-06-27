@@ -57,3 +57,14 @@ public class Main {
         funcionarioTerceirizado.darReajuste(0.1); // Exemplo de tentativa de reajuste para funcionário terceirizado
     }
 }
+
+// bad smells: 
+
+// Mistura de Responsabilidades: A classe Funcionario possui a responsabilidade de armazenar dados de um funcionário e também de aplicar reajustes salariais. Isso viola o princípio de responsabilidade única.
+
+// Código Duplicado: A lógica de reajuste salarial está sendo duplicada nas classes Funcionario e FuncionarioTerceirizado. Isso pode levar a problemas de manutenção no futuro se a lógica precisar ser alterada.
+
+// Tipos primitivos em vez de tipos de dados mais apropriados: Em vez de usar double para representar salários, pode ser mais apropriado usar BigDecimal para evitar problemas de precisão de ponto flutuante.
+
+// Utilização de List.of() para telefones: O uso de List.of() com strings para representar telefones pode ser limitante, uma vez que não permite adicionar ou remover telefones facilmente. Seria mais adequado usar uma lista mutável, como ArrayList.
+
